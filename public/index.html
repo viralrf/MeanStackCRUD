@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="MeanApp">
+<head>
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body ng-controller="indexCtrl">
+
+<div class="container">
+
+	<table class="table">
+		<thead>
+			<tr>
+				<td><h3>Nick</h3></td>
+				<td><h3>Weapon</h3></td>
+				<td><h3>Frags</h3></td>
+				<td><h3>&nbsp;</h3></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input class="form-control" ng-model="player.nick"></td>
+				<td><input class="form-control" ng-model="player.weapon"></td>
+				<td><input class="form-control" ng-model="player.frags"></td>
+				<td><button class="btn btn-primary" ng-click="addPlayer()">Agregar</button></td>
+				<td><button class="btn btn-success" ng-click="updatePlayer()">Actualizar</button></td>
+				<td><button class="btn btn-info" ng-click="limpiar()">Limpiar</button></td>
+			</tr>
+			<tr ng-repeat="plyr in listaPlayers">
+				<td>{{plyr.nick}}</td>
+				<td>{{plyr.weapon}}</td>
+				<td>{{plyr.frags}}</td>
+				<td><button class="btn btn-danger" ng-click="deletePlayer(plyr)">Eliminar</button></td>
+				<td><button class="btn btn-warning" ng-click="editar(plyr)">Editar</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+	<script src="./bower_components/angular/angular.js"></script>
+	<script src="./js/controller.js"></script>
+</body>
+</html>
