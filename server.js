@@ -29,7 +29,7 @@ app.post('/addplayer',function(req,res){//Agrega un jugador
 });
 
 app.put('/updateplayer',function(req,res){
-	player.findOneAndUpdate({nick: req.body.nick},{nick: req.body.nick, weapon: req.body.weapon},function(err,player){
+	player.findOneAndUpdate({nick: req.body.nick},{nick: req.body.nick, weapon: req.body.weapon, frags: req.body.frags},function(err,player){
 		if(!err){
 			return res.status(200).send();
 		}

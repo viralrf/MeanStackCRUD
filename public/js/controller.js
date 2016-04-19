@@ -83,9 +83,7 @@ app.controller('indexCtrl',function($scope,$http){
 	}
 	
 	$scope.limpiar = function(){
-		$scope.player.nick = "";
-		$scope.player.weapon = "";
-		$scope.player.frags = "";
+		$scope.player = {};
 	}
 	
 });
