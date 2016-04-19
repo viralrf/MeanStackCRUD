@@ -4,7 +4,7 @@ var app = angular.module('MeanApp',[]);
 app.controller('indexCtrl',function($scope,$http){
 	
 	$scope.listaPlayers = [];
-	$scope.player = {};
+	$scope.player = {weapon: 'M3 Super 90 Assault Shotgun'};
 	
 	$scope.getPlayers = function(){
 		$http({
@@ -12,7 +12,7 @@ app.controller('indexCtrl',function($scope,$http){
 			url: '/getplayers'
 		}).then(function successCallback(response){
 			$scope.listaPlayers = response.data;
-			$scope.player = {};
+			$scope.player = {weapon: 'M3 Super 90 Assault Shotgun'};
 			console.log('get success');
 		},function errorCallback(response){
 			console.log('get error');

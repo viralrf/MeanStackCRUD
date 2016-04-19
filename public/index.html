@@ -19,14 +19,32 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td><input class="form-control" ng-model="player.nick"></td>
-				<td><input class="form-control" ng-model="player.weapon"></td>
-				<td><input class="form-control" ng-model="player.frags"></td>
-				<td><button class="btn btn-primary" ng-click="addPlayer()">Agregar</button></td>
-				<td><button class="btn btn-success" ng-click="updatePlayer()">Actualizar</button></td>
-				<td><button class="btn btn-info" ng-click="limpiar()">Limpiar</button></td>
+				<td class="col-md-3"><input class="form-control" maxlength="32" ng-model="player.nick"></td>
+				
+				<td class="col-md-3">
+				<div class="btn-group">
+				  <button type="button" 
+				  class="btn btn-default dropdown-toggle" data-toggle="dropdown" 
+				  aria-haspopup="true" aria-expanded="false">
+					{{player.weapon}} <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+				    <li><a href="#" ng-click="player.weapon='M3 Super 90 Assault Shotgun'">M3 Super 90 Assault Shotgun</a></li>
+					<li><a href="#" ng-click="player.weapon='MK23 Pistol'">MK23 Pistol</a></li>
+					<li><a href="#" ng-click="player.weapon='MP5/10 Submachinegun'">MP5/10 Submachinegun</a></li>
+					<li><a href="#" ng-click="player.weapon='M4 Assault Rifle'">M4 Assault Rifle</a></li>
+					<li><a href="#" ng-click="player.weapon='Handcannon'">Handcannon</a></li>
+					<li><a href="#" ng-click="player.weapon='SSG-3000 Sniper Rifle'">SSG-3000 Sniper Rifle</a></li>
+				  </ul>
+				</div>
+				</td>
+				
+				<td class="col-md-3"><input class="form-control" ng-model="player.frags"></td>
+				<td class="col-md-1"><button class="btn btn-primary" ng-click="addPlayer()">Agregar</button></td>
+				<td class="col-md-1"><button class="btn btn-success" ng-click="updatePlayer()">Actualizar</button></td>
+				<td class="col-md-1"><button class="btn btn-info" ng-click="limpiar()">Limpiar</button></td>
 			</tr>
-			<tr ng-repeat="plyr in listaPlayers">
+			<tr ng-repeat="plyr in listaPlayers" class="plyrList">
 				<td>{{plyr.nick}}</td>
 				<td>{{plyr.weapon}}</td>
 				<td>{{plyr.frags}}</td>
@@ -37,7 +55,9 @@
 	</table>
 </div>
 
+	<script src="./bower_components/jquery/dist/jquery.js"></script>
 	<script src="./bower_components/angular/angular.js"></script>
+	<script src="./bower_components/bootstrap/js/dropdown.js"></script>
 	<script src="./js/controller.js"></script>
 </body>
 </html>
