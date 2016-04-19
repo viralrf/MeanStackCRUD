@@ -83,7 +83,7 @@ app.controller('indexCtrl',function($scope,$http){
 	}
 	
 	$scope.limpiar = function(){
-		$scope.player = {};
+		$scope.player = {weapon: 'M3 Super 90 Assault Shotgun'};
 	}
 	
 });
