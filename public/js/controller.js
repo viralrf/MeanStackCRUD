@@ -41,10 +41,10 @@ app.controller('indexCtrl',function($scope,$http){
 				data: $scope.player
 			}).then(function successCallback(response){
 				console.log('add success');
+				$scope.getPlayers();
 			},function errorCallback(response){
 				console.log('add error');
-			});
-			$scope.getPlayers();	
+			});	
 		}
 	}
 	
@@ -56,10 +56,10 @@ app.controller('indexCtrl',function($scope,$http){
 				data: $scope.player
 			}).then(function successCallback(response){
 				console.log('update success');
+				$scope.getPlayers();
 			},function errorCallback(response){
 				console.log('update error');
 			});
-		$scope.getPlayers();
 		}
 	}
 	
@@ -70,10 +70,10 @@ app.controller('indexCtrl',function($scope,$http){
 			data: player
 		}).then(function successCallback(response){
 			console.log('delete success!');
+			$scope.getPlayers();
 		}, function errorCallback(response){
 			console.log('delete error ._.');
 		});
-		$scope.getPlayers();
 	}
 	
 	$scope.editar = function(player){
